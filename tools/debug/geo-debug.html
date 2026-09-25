@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:#9bb">
+<script src="../../data/geo.js"></script>
+<script>
+const g=SM.geo; const ns='http://www.w3.org/2000/svg';
+const s=document.createElementNS(ns,'svg'); s.setAttribute('viewBox',(location.search.slice(1).replace(/,/g,' '))||g.view.join(' ')); s.style.width='100vw'; s.style.height='100vh';
+let h=`<path d="${g.land}" fill="#ddd"/><path d="${g.graticule}" fill="none" stroke="#0003"/>`;
+let i=0; for(const [id,d] of Object.entries(g.regions)){ const c=`hsl(${(i*47)%360} 60% 60%)`; i++; h+=`<path d="${d}" fill="${c}" stroke="#000" stroke-width="0.4"/>`; const b=g.bbox[id]; h+=`<text x="${(b[0]+b[2])/2}" y="${(b[1]+b[3])/2}" font-size="${location.search?7:22}" text-anchor="middle">${id}</text>`}
+h+=`<path d="${g.lakes}" fill="#9bb"/><path d="${g.rivers}" fill="none" stroke="#467" stroke-width="1"/><path d="${g.borders}" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="3 3"/>`;
+s.innerHTML=h; document.body.appendChild(s);
+</script>

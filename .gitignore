@@ -1,0 +1,6 @@
+node_modules/
+raw/
+.playwright-mcp/
+dist/
+.claude/
+*.try*.mp3
