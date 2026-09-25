@@ -17,7 +17,7 @@ epilogue to the Peace of Nystad in 1721. The content is in Swedish, English and 
 
 ## Running it
 
-* **Online:** published with GitHub Pages (see the repository's Pages URL).
+* **Online:** https://kunskapshunger.github.io/stormaktsdagar/
 * **Open a single file:** `npm run build` creates `dist/index.html`, which works directly in the browser
   (narration needs the `audio/` folder next to it). Fonts are loaded from Google Fonts.
 * **Development:** `node tools/serve.mjs 8124` → http://localhost:8124/ (no caching).
